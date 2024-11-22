@@ -32,8 +32,16 @@ this could probably have gotten a cleaner design if i had time, something i sore
 second, it was a good experience to learn a bit about how to work with external files in python. \
 i am not too great with that so it was a good project to get. \
 there are a few things i could've done better if i had more time and knowledge, as well as less things happening during the week. \
-but eh, i'm happy with what i made \
+but eh, i'm happy with what i made 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
