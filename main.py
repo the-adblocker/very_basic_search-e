@@ -21,10 +21,46 @@ def getWord():
     print("")
     return sw
 
+def searchtype():
+    s_type = 0
+    print("")
+    print("Hva ønsker du å finne?")
+    print("1: vis ord | 2: vis antall ord | 3: vis linje med ordet | 4: vis alt")
+    while s_type == 0:
+        s_type = int(input(""))
+        if s_type == 1 or s_type == 2 or s_type == 3 or s_type == 4:
+            print("")
+        else:
+            print("vennligst velg et tall 1-4")
+            s_type = 0
+    print("")
+    return s_type
+
+def chooseFile():
+    c_file = 0
+    print("")
+    print("Hvilken tekstfil ønsker du å se i?")
+    print("1: tekstfil1 | 2: tekstfil2 | 3: tekstfil3 | 4: vis alle filer")
+    while c_file == 0:
+        c_file = int(input(""))
+        if c_file == 1 or c_file == 2 or c_file == 3 or c_file == 4:
+            print("")
+        else:
+            print("vennligst velg et tall 1-4")
+            c_file = 0
+    print("____________________________________________")
+    print("")
+    return c_file
+
+
 searchword = getWord()
+stype = searchtype()
+cfile = chooseFile()
 
 def lesInnTekst():
     print("")
+
+
 
 
 def finnOrd(ord):
@@ -127,67 +163,85 @@ def finnOrd(ord):
 
 
 def printOrd():
+
     count1 = len(file1_list)
     count2 = len(file2_list)
     count3 = len(file3_list)
-    print(file1_list)
-    print("I fil 1 finner vi", searchword, count1, "ganger")
-    print("")
 
 
+    if cfile == 1 or cfile == 4:
 
-    filename1 = r"tekstfil1.txt"
+        if stype == 1 or stype == 4:
+            print(file1_list)
 
-    with open(filename1) as filer1:
-        lines1 = filer1.readlines()
-    
+        if stype == 2 or stype == 4:
+            print("I fil 1 finner vi", searchword, count1, "ganger")
+            print("")
 
-    for number1, line1 in enumerate(lines1, 1):  
+        if stype == 3 or stype == 4:
+            filename1 = r"tekstfil1.txt"
 
-        if searchword in line1:  
-            print(searchword, 'er på linje', number1, "i tekstfil 1")
-    
-    print("")
-    print("____________________________________________")
-    print("")
+            with open(filename1) as filer1:
+                lines1 = filer1.readlines()
+            
 
-    print(file2_list)
-    print("I fil 2 finner vi", searchword, count2, "ganger")
-    print("")
+            for number1, line1 in enumerate(lines1, 1):  
 
-    filename2 = r"tekstfil2.txt"
-
-    with open(filename2) as filer2:
-        lines2 = filer2.readlines()
-
-    for number2, line2 in enumerate(lines2, 1):  
-
-        if searchword in line2:  
-            print(searchword, 'er på linje', number2, "i tekstfil 2")
-    
-    print("")
-    print("____________________________________________")
-    print("")
-
-    print(file3_list)
-    print("I fil 3 finner vi", searchword, count3, "ganger")
-    print("")
+                if searchword in line1:  
+                    print(searchword, 'er på linje', number1, "i tekstfil 1")
+            
+        print("")
+        print("____________________________________________")
+        print("")
 
 
-    filename3 = r"tekstfil3.txt"
-    
+    if cfile == 2 or cfile == 4:
+        if stype == 1 or stype == 4:
+            print(file2_list)
+        if stype == 2 or stype == 4:
+            print("I fil 2 finner vi", searchword, count2, "ganger")
+            print("")
 
-    with open(filename3) as filer3:
-        lines3 = filer3.readlines()
+        if stype == 3 or stype == 4:
+            filename2 = r"tekstfil2.txt"
 
-    for number3, line3 in enumerate(lines3, 1):  
+            with open(filename2) as filer2:
+                lines2 = filer2.readlines()
 
-        if searchword in line3:  
-            print(searchword, 'er på linje', number3, "i tekstfil 3")
-    
-    print("")
-    print("____________________________________________")
-    print("")
+            for number2, line2 in enumerate(lines2, 1):  
+
+                if searchword in line2:  
+                    print(searchword, 'er på linje', number2, "i tekstfil 2")
+            
+        print("")
+        print("____________________________________________")
+        print("")
+
+
+    if cfile == 3 or cfile == 4:
+        if stype == 1 or stype == 4:
+            print(file3_list)
+
+        if stype == 2 or stype == 4:
+            print("I fil 3 finner vi", searchword, count3, "ganger")
+            print("")
+
+
+        if stype == 3 or stype == 4:
+            filename3 = r"tekstfil3.txt"
+            
+
+            with open(filename3) as filer3:
+                lines3 = filer3.readlines()
+
+            for number3, line3 in enumerate(lines3, 1):  
+
+                if searchword in line3:  
+                    print(searchword, 'er på linje', number3, "i tekstfil 3")
+        
+        print("")
+        print("____________________________________________")
+        print("")
 
 
 finnOrd(searchword)
