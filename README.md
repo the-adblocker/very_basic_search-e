@@ -10,5 +10,10 @@ the basic search engine we were tasked with making.
 - three .txt files
 - a .zip file containing all 4 relevant files
 
+<br>
+<br>
+
+## how it works
+
 
 
